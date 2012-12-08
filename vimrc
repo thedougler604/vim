@@ -1,5 +1,5 @@
 set nocompatible
-"call pathogen#infect()
+call pathogen#infect()
 syntax on
 "syntax sync minlines=256
 filetype plugin indent on
@@ -28,6 +28,8 @@ set foldenable foldmethod=syntax
 set ignorecase smartcase
 set ttyfast lazyredraw
 set title
+set nocompatible
+set showmatch
 
 set background=dark
 let g:loaded_matchparen=1
@@ -49,13 +51,13 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multiple_files = 'i'
 let g:ctrlp_follow_symlinks = 1
 let g:NERDTreeQuitOnOpen = 1
-"colorscheme jellybeans
+colorscheme jellybeans
 
 au FileType php setl foldlevel=0 foldnestmax=2
 au FileType xml setl tabstop=2 shiftwidth=2 softtabstop=2
 au FileType css setl foldmethod=marker foldmarker={,}
 
-au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+"au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 au InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 if has("gui_running")
